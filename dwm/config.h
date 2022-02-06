@@ -1,10 +1,16 @@
 /* See LICENSE file for copyright and license details. */
 
+/* Add poybar */
+static const int showbar       = 1;          /* 0 means no bar */
+static const int topbar        = 1;          /* 0 means bottom bar */
+static const int usealtbar     = 1;          /* 1 means use non-dwm status bar */
+static const char *altbarclass = "Polybar";  /* Alternate bar class name */
+static const char *altbarcmd   = "$HOME/.dwm/launch_bar.sh"; /* Alternate bar launch command */
+static const char *alttrayname      = "tray";    /* Polybar tray instance name */
+
 /* appearance */
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
-static const int showbar            = 1;        /* 0 means no bar */
-static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "monospace:size=10" };
 static const char dmenufont[]       = "monospace:size=10";
 static const char col_gray1[]       = "#b8f2e6";
@@ -29,12 +35,6 @@ static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
 	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
-
-  /* sequence     event        lines */
-	{"\033[5;2~",   SCROLL_UP,   -1},       /* [Shift] + [PageUP] */
-	{"\033[6;2~",   SCROLL_DOWN, -1},       /* [Shift] + [PageDown] */
-	{"\031",        SCROLL_UP,    1},       /* mouse wheel up */
-	{"\033[1;6B",        SCROLL_DOWN,  1},       /* mouse wheel Down */
 };
 
 /* layout(s) */
