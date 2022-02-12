@@ -23,9 +23,11 @@ background-alt = #e2a6a2
 ;foreground = ${xrdb:color7:#222}
 foreground = #3b3f48
 foreground-alt = #555
-primary = #ffb52a
+primary = #ffa69a
 secondary = #e60053
 alert = #bd2c40
+tag_focused = #b8f2e6
+
 
 [bar/mybar]
 ;monitor = ${env:MONITOR:HDMI-1}
@@ -58,10 +60,10 @@ font-2 = FontAwesome:size=10;4
 font-3 = Siji:size=15,4
 font-4 = Noto Sans Symbols2:size=14;4
 modules-left = dwm 
-modules-right = filesystem pulseaudio xkeyboard memory cpu wlan eth battery temperature date powermenu
+modules-right = filesystem pulseaudio xkeyboard memory cpu temperature wlan eth battery date powermenu
 
 tray-position = right
-tray-padding = 2
+tr=ay-padding = 2
 ;tray-background = #0063ff
 override-redirect = false
 
@@ -105,7 +107,7 @@ secondary-layout-symbol = [M]
 ;   %title%
 label-title = %title%
 label-title-padding = 2
-label-title-foreground = ${colors.primary}
+label-title-foreground = ${colors.foreground}
 label-title-maxlen = 30
 
 ; Defaults to 'Desktop'
@@ -116,8 +118,8 @@ label-title-default = "Desktop"
 ;   %symbol%
 label-layout = %symbol%
 label-layout-padding = 2
-label-layout-foreground = #aed9e0
-label-layout-background = ${colors.primary}
+label-layout-foreground = ${colors.foreground} 
+label-layout-background = ${colors.background}
 
 ; Text to show when currently focused window is floating
 label-floating = F
@@ -128,8 +130,8 @@ label-floating = F
 
 ; focused = Selected tag on focused monitor
 label-focused = %name%
-label-focused-background = ${colors.background-alt}
-label-focused-underline= ${colors.primary}
+label-focused-background = ${colors.primary}
+label-focused-underline= ${colors.tag_focused}
 label-focused-padding = 2
 
 ; unfocused = Unselected tag on unselected monitor
@@ -138,9 +140,9 @@ label-unfocused-padding = 2
 
 ; visible = Unselected tag, but occupied tag on any monitor
 label-visible = %name%
-label-visible-background = ${self.label-focused-background}
+label-visible-background = ${colors.primary}
 label-visible-underline = ${self.label-focused-underline}
-label-visible-padding = ${self.label-focused-padding}
+label-visible-padding = 2
 
 ; urgent = Unselected tag with window that has urgency hint set
 label-urgent = %name%
@@ -327,7 +329,7 @@ full-at = 98
 format-charging = <animation-charging> <label-charging>
 format-charging-underline = #ffb52a
 
-format-discharging = <animation-discharging> <label-discharging>
+format-discharging = <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
 
 format-full-prefix = " "
