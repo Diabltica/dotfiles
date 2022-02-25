@@ -48,7 +48,7 @@ border-size = 4
 border-color = #00000000
 
 padding-left = 0
-padding-right = 2
+padding-right = 4
 
 module-margin-left = 1
 module-margin-right = 2
@@ -78,7 +78,7 @@ format = <label-tags> <label-layout> <label-floating> <label-title>
 socket-path = /tmp/dwm.sock
 
 ; Left-click to view tag, right-click to toggle tag view
-enable-tags-click = false
+enable-tags-click = true
 ; Scroll to cycle between available tags
 enable-tags-scroll = false
 ; If true and enable-tags-scroll = true, scrolling will view all tags regardless if occupied
@@ -88,7 +88,7 @@ tags-scroll-reverse = false
 ; If true and enable-tags-scroll = true, wrap active tag when scrolling
 tags-scroll-wrap = false
 ; Left-click to set secondary layout, right-click to switch to previous layout
-enable-layout-click = false
+enable-layout-click = true
 ; Scroll to cycle between available layouts
 enable-layout-scroll = false
 ; Wrap when scrolling and reaching beginning/end of layouts
@@ -130,9 +130,9 @@ label-floating = F
 
 ; focused = Selected tag on focused monitor
 label-focused = %name%
-label-focused-background = ${colors.primary}
+label-focused-background = ${colors.tag_focused}
 label-focused-underline= ${colors.tag_focused}
-label-focused-padding = 2
+label-focused-padding = 4
 
 ; unfocused = Unselected tag on unselected monitor
 label-unfocused = %name%
