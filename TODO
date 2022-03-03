@@ -1,0 +1,27 @@
+BAR
+    Bar Change All polybar Icons
+    Display all windows tab 
+    add Bluetooth
+    add Wifi menu
+System
+    Handle shortcut
+    Fix Keymap (caps lock escape)
+    add screenshot
+    add gap between windows
+    handle true fullscreen
+
+Rofi
+    Handle scrolling with arrow Key
+    Highlight selected
+
+Dunst
+    Install and config
+
+i3lock
+    Find why password always wrong
+    config lockscreen
+
+Create Install script
+
+Bonus
+    Replace polybar with eww
