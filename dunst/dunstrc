@@ -1,0 +1,14 @@
+[global]
+monitor = 0
+follow = none
+
+width = (0,300)
+height = 200
+notification_limit = 2
+transparency =0
+separator_height = 10
+padding = 10 
+
+format = "<b>%a</b>\n%s%p\n%b"
+
+mouse_left = close_current
