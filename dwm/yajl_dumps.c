@@ -129,11 +129,11 @@ dump_monitor(yajl_gen gen, Monitor *mon, int is_selected)
     YSTR("clients"); YMAP(
       YSTR("selected"); YINT(mon->sel ? mon->sel->win : 0);
       YSTR("stack"); YARR(
-        for (Client* c = mon->stack; c; c = c->snext)
+        for (Client* c = mon->cl->stack; c; c = c->snext)
           YINT(c->win);
       )
       YSTR("all"); YARR(
-        for (Client* c = mon->clients; c; c = c->next)
+        for (Client* c = mon->cl->clients; c; c = c->next)
           YINT(c->win);
       )
     )
