@@ -15,8 +15,9 @@ static const unsigned int gappih    = 10;       /* horiz inner gap between windo
 static const unsigned int gappiv    = 10;       /* vert inner gap between windows */
 static const unsigned int gappoh    = 5;       /* horiz outer gap between windows and screen edge */
 static const unsigned int gappov    = 10;       /* vert outer gap between windows and screen edge */
-static       int smartgaps          = 1;        /* 1 means no outer gap when there is only one window */
-static const char *fonts[]          = { "monospace:size=10" };
+static       int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
+static const char *fonts[]          = {"Iosevka:style:medium:size=12" ,"JetBrainsMono Nerd Font:style:medium:size=11",
+                                        "Material Design Icons Desktop:size=11"};
 static const char dmenufont[]       = "monospace:size=10";
 static const char col_gray1[]       = "#b8f2e6";
 static const char col_gray2[]       = "#aed9e0";
@@ -40,6 +41,8 @@ static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
 	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+  { "eww",      NULL,       NULL,       0,            1,           -1 },
+  { "Firefox",       NULL,       "Picture-in-Picture", ~0,  1,           -1 },
 };
 
 /* layout(s) */
@@ -86,8 +89,9 @@ static const char scratchpadname[] = "scratchpad";
 static const char *roficmd[]  = {"rofi","-show","drun","-showicons",NULL};
 static const char *termcmd[]  = {"kitty", NULL};
 static const char *lock[] = {"i3lock-fancy", NULL};
-static const char *scratchpadcmd[] = {"kitty", "-T", scratchpadname, NULL};
+static const char *scratchpadcmd[] = {"st", "-t", scratchpadname,"-g","180x41", NULL};
 static const char *firefox[] = {"firefox", NULL};
+static const char *dashboard[] = {"/home/thomas/.config/eww/dashboard/launch_dashboard", NULL};
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -95,6 +99,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
     { MODKEY|Mod4Mask,              XK_Return, togglescratch,  {.v = scratchpadcmd } },
     { MODKEY|ShiftMask,             XK_f,      spawn,          {.v = firefox } },
+    { MODKEY|ShiftMask,             XK_g,      spawn,          {.v = dashboard } },
     { MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
@@ -138,10 +143,10 @@ static Key keys[] = {
 	TAGKEYS(                        XK_quotedbl,               2)
 	TAGKEYS(                        XK_apostrophe,             3)
 	TAGKEYS(                        XK_parenleft,              4)
-	TAGKEYS(                        XK_minus,                  5)
-	TAGKEYS(                        XK_egrave,                 6)
-	TAGKEYS(                        XK_underscore,             7)
-	TAGKEYS(                        XK_ccedilla,               8)
+	TAGKEYS(                        XK_a,                      5)
+	TAGKEYS(                        XK_z,                      6)
+	TAGKEYS(                        XK_e,                      7)
+	TAGKEYS(                        XK_r,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 };
 
